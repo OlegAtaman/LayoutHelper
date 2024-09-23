@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+<p>Top</p>
+<form method="get">
+<select name="top_slot">
+    <option>-</option>
+    <option value="metal">Metal wall</option>
+</select>
+<p>Left</p>
+<select name="left_slot">
+    <option>-</option>
+    <option value="metal">Metal wall</option>
+</select>
+<p>Right</p>
+<select name="right_slot">
+    <option>-</option>
+    <option value="metal">Metal wall</option>
+</select>
+<p>Bottom</p>
+<select name="bottom_slot">
+    <option>-</option>
+    <option value="metal">Metal wall</option>
+</select>
+<p><button id="construct_button" value="submit">Construct</button></p>
+</form>
+<div id="selected_items">
+    <P>Selected items:</P>
+    <div id="selected_items_list"></div>
+    <button id="place_items">Place items</button>
+</div>
+<div id="list_items">
+    <P>Select items:</P>
+    <button id="add_large_box">Large box</button>
+</div>
+<div id="canvas">
+    {% if get_args.top_slot == 'metal' %}
+        <img class="wall" id="top_wall" src="{% static 'textures/metal_wall.png' %}">
+    {% endif %}
+    {% if get_args.left_slot == 'metal' %}
+        <img class="wall" id="left_wall" src="{% static 'textures/metal_wall.png' %}">
+    {% endif %}
+    {% if get_args.right_slot == 'metal' %}
+        <img class="wall" id="right_wall" src="{% static 'textures/metal_wall.png' %}">
+    {% endif %}
+    {% if get_args.bottom_slot == 'metal' %}
+        <img class="wall" id="bottom_wall" src="{% static 'textures/metal_wall.png' %}">
+    {% endif %}
+</div>
+{% endblock %}

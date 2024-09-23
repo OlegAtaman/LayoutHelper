@@ -1,0 +1,34 @@
+#canvas {
+    background-color:lightblue;
+    display: block;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    position: absolute;
+    top: 100px;
+    right: 300px;
+}
+.wall {
+    position: absolute;
+}
+#top_wall {
+    top: -5px;
+    left: -5px;
+}
+#left_wall {
+    transform: rotate(90deg) scaleY(-1);
+    transform-origin: top left;
+    top: -5px;
+    left: -5px;
+}
+#right_wall {
+    transform: rotate(90deg) scaleX(-1);
+    transform-origin: top right;
+    top: -5px;
+    right: -5px;
+}
+#bottom_wall {
+    transform: scaleY(-1);
+    bottom: -5px;
+    left: -5px;
+}
